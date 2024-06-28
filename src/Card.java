@@ -76,8 +76,4 @@ public class Card {
 //        Card card = (Card) o;
 //        return Objects.equals(cardNumber, card.cardNumber);
 //    }
-
-    public void showCard() {
-        System.out.printf("%s | %s | %s | %f | %s\n", cardNumber, pin, pinAttempt, cardBalance, blockingCardUntil);
-    }
 }
