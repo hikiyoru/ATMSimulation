@@ -4,11 +4,9 @@ import java.util.*;
 public class ATM extends BankEntity {
     private ATMState atmState = ATMState.IDLE;
     private final Map<String, Card> cards = new HashMap<>();
-    private final DataFileManager dataFileManager;
 
     ATM(DataFileManager dataFileManager)
     {
-        this.dataFileManager = dataFileManager;
         dataFileManager.read(this);
     }
     public ATMState getATMState() {
@@ -20,7 +18,6 @@ public class ATM extends BankEntity {
     public List<String> getAllCardsToString() {
         List<String> list = new ArrayList<>();
         for (Map.Entry<String, Card> entry : cards.entrySet()) {
-            String key = entry.getKey();
             Card card = entry.getValue();
             list.add(card.toString());
 
@@ -71,6 +68,5 @@ public class ATM extends BankEntity {
     public void updateBalance(BigDecimal amount) {
         balance = balance.add(amount);
         getCard(cardNumber).updateBalance(amount);
-        dataFileManager.write(this);
     }
 }
