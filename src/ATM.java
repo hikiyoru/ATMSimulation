@@ -10,6 +10,7 @@ public class ATM extends BankEntity {
     {
         this.dataFileManager = dataFileManager;
         dataFileManager.read(this);
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> dataFileManager.write(this)));
     }
     public ATMState getATMState() {
         return atmState;
@@ -71,6 +72,5 @@ public class ATM extends BankEntity {
     public void updateBalance(BigDecimal amount) {
         balance = balance.add(amount);
         getCard(cardNumber).updateBalance(amount);
-        dataFileManager.write(this);
     }
 }
