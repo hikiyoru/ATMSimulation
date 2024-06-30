@@ -2,7 +2,7 @@ import java.math.BigDecimal;
 import java.util.*;
 
 public class ATM extends BankEntity {
-    private ATMState atmState = ATMState.AWAITING_CARDNUMBER;
+    private ATMState atmState = ATMState.IDLE;
     private final Map<String, Card> cards = new HashMap<>();
     private final DataFileManager dataFileManager;
 

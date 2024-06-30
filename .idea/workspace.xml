@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="Update classes, implementation ReadableWritable, added DateFormatHelper">
-      <change afterPath="$PROJECT_DIR$/src/InsufficientFundsException.java" afterDir="false" />
+    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="Added InsufficientFundsException, refactor code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ATM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ATM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BankEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BankEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFileManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ATMState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ATMState.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,13 +108,22 @@
       <option name="project" value="LOCAL" />
       <updated>1719672696793</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added InsufficientFundsException, refactor code">
+      <option name="closed" value="true" />
+      <created>1719740726357</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719740726357</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added ATM, ATMState, Card classes, ReadableWritable interface." />
     <MESSAGE value="ReadableWritable interface (Card -&gt; Map&lt;String, Card&gt;)" />
     <MESSAGE value="Update classes, implementation ReadableWritable, added DateFormatHelper" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update classes, implementation ReadableWritable, added DateFormatHelper" />
+    <MESSAGE value="Added InsufficientFundsException, refactor code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added InsufficientFundsException, refactor code" />
   </component>
 </project>

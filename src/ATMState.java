@@ -3,7 +3,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public enum ATMState {
-    AWAITING_CARDNUMBER,
+    IDLE,
     AWAITING_CARDPIN,
-    AWAITING_ACTION;
+    AWAITING_ACTION,
+    WITHDRAWING,
+    DEPOSITING,
+    CHECKING_BALANCE;
 }
