@@ -4,16 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="ReadableWritable interface (Card -&gt; Map&lt;String, Card&gt;)">
-      <change afterPath="$PROJECT_DIR$/data/data.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/BankEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataFileManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DateFormatHelper.java" afterDir="false" />
+    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="Update classes, implementation ReadableWritable, added DateFormatHelper">
+      <change afterPath="$PROJECT_DIR$/src/InsufficientFundsException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ATM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ATM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BankEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BankEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFileManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ReadableWritable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ReadableWritable.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,19 +56,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "development",
-    "kotlin-language-version-configured": "true",
-    "onboarding.tips.debug.path": "C:/Users/uglot/IdeaProjects/ATMSimulation/src/Main.java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/uglot/IdeaProjects/ATMSimulation/src/Main.java&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -104,12 +102,21 @@
       <option name="project" value="LOCAL" />
       <updated>1719597465785</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Update classes, implementation ReadableWritable, added DateFormatHelper">
+      <option name="closed" value="true" />
+      <created>1719672696793</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1719672696793</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added ATM, ATMState, Card classes, ReadableWritable interface." />
     <MESSAGE value="ReadableWritable interface (Card -&gt; Map&lt;String, Card&gt;)" />
-    <option name="LAST_COMMIT_MESSAGE" value="ReadableWritable interface (Card -&gt; Map&lt;String, Card&gt;)" />
+    <MESSAGE value="Update classes, implementation ReadableWritable, added DateFormatHelper" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update classes, implementation ReadableWritable, added DateFormatHelper" />
   </component>
 </project>

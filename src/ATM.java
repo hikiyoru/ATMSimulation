@@ -1,15 +1,15 @@
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ATM extends BankEntity {
     private ATMState atmState = ATMState.AWAITING_CARDNUMBER;
-    private Map<String, Card> cards = new HashMap<>();
+    private final Map<String, Card> cards = new HashMap<>();
+    private final DataFileManager dataFileManager;
 
-    ATM(DataFileManager dataManager) {
-        dataManager.read(this);
+    ATM(DataFileManager dataFileManager)
+    {
+        this.dataFileManager = dataFileManager;
+        dataFileManager.read(this);
     }
     public ATMState getATMState() {
         return atmState;
@@ -34,38 +34,43 @@ public class ATM extends BankEntity {
         cards.put(card.getCardNumber(), card);
     }
     public boolean withdraw(BigDecimal amount) {
-        if (amount.compareTo(BigDecimal.ZERO) <= 0) {
-            System.out.println("The amount cannot be less than or equal to 0");
+        try {
+            if (!isPositive(amount)) {
+                throw new IllegalArgumentException("The amount must be positive");
+            }
+            BigDecimal cardBalance = getCard(cardNumber).balance;
+            if (cardBalance.compareTo(amount) < 0) {
+                throw new InsufficientFundsException("Insufficient funds on bank card");
+            }
+            if (balance.compareTo(amount) < 0) {
+                throw new InsufficientFundsException("Insufficient funds in ATM");
+            }
+            updateBalance(amount.negate());
+            return true;
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
             return false;
         }
-        if (getCard(cardNumber).balance.compareTo(amount) < 0) {
-            System.out.println("Insufficient funds on bank card");
-            return false;
-        }
-        if (balance.compareTo(amount) < 0) {
-            System.out.println("Insufficient funds in ATM");
-            return false;
-        }
-        updateBalance(amount.negate());
-        System.out.println("The funds were successfully withdrawn");
-        return true;
     }
     public boolean deposit(BigDecimal amount) {
-        if (amount.compareTo(BigDecimal.ZERO) <= 0) {
-            System.out.println("The amount cannot be less than or equal to 0");
+        try {
+            if (!isPositive(amount)) {
+                throw new IllegalArgumentException("The amount must be positive");
+            }
+            if (amount.compareTo(new BigDecimal(1000000)) > 0) {
+                throw new InsufficientFundsException("The amount cannot be more than 1000000");
+            }
+            updateBalance(amount);
+            return true;
+        } catch (Exception e) {
+            System.err.println("Error: " + e.getMessage());
             return false;
         }
-        if (amount.compareTo(new BigDecimal("1000000")) > 0){
-            System.out.println("The amount cannot be more than 1000000");
-            return false;
-        }
-        System.out.println("The funds were successfully deposited");
-        updateBalance(amount);
-        return true;
     }
     @Override
     public void updateBalance(BigDecimal amount) {
         balance = balance.add(amount);
         getCard(cardNumber).updateBalance(amount);
+        dataFileManager.write(this);
     }
 }

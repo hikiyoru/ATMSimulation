@@ -1,9 +1,6 @@
 import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Map;
-import java.util.Objects;
 
 public class Card extends BankEntity {
     private String pin;
@@ -13,17 +10,34 @@ public class Card extends BankEntity {
     private static final byte MAX_PIN_ATTEMPTS = 3;
 
     Card(String cardNumber, String pin, byte pinAttempt, BigDecimal balance, Date blockingCardUntil) {
-        this.cardNumber = cardNumber;
-        this.pin = pin;
-        this.pinAttempt = pinAttempt;
-        this.balance = balance;
-        this.blockingCardUntil = blockingCardUntil;
+        setCardNumber(cardNumber);
+        setPin(pin);
+        setPinAttempt(pinAttempt);
+        setBalance(balance);
+        setBlockingCardUntil(blockingCardUntil);
     }
     public String getPin() {
         return pin;
     }
     public byte getPinAttempt() {
         return pinAttempt;
+    }
+    public void setPin(String pin) {
+        if (pin != null && pin.matches("\\d{4}")) {
+            this.pin = pin;
+        } else {
+            throw new IllegalArgumentException("The PIN code must consist of 4 digits");
+        }
+    }
+    public void setPinAttempt(byte pinAttempt) {
+        if (pinAttempt >= 0 && pinAttempt <= MAX_PIN_ATTEMPTS) {
+            this.pinAttempt = pinAttempt;
+        } else {
+            throw new IllegalArgumentException("The pin attempts must be more or equal then 0 and less or equal 3");
+        }
+    }
+    public void setBlockingCardUntil(Date blockingCardUntil) {
+        this.blockingCardUntil = blockingCardUntil;
     }
     public boolean checkPin(String enteredPin) {
         if (isCardBlocked()) {

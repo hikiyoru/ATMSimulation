@@ -13,12 +13,19 @@ public abstract class BankEntity {
     public void setCardNumber(String cardNumber) {
         if (isStringCardNumber(cardNumber)) {
             this.cardNumber = cardNumber;
+        } else {
+            throw new IllegalArgumentException("Incorrect card number");
         }
     }
     public void setBalance(BigDecimal balance) {
         if (isNotNegative(balance)) {
             this.balance = balance;
+        } else {
+            throw new IllegalArgumentException("Balance must be not negative");
         }
+    }
+    public boolean isPositive(BigDecimal value) {
+        return value.signum() > 0;
     }
     public boolean isNotNegative(BigDecimal value) {
         return value.signum() >= 0;

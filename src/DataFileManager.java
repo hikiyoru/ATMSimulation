@@ -15,7 +15,6 @@ public class DataFileManager implements ReadableWritable<ATM> {
     public void read(ATM atm) {
         try (BufferedReader reader = new BufferedReader(new FileReader(FILE_PATH))) {
             String line = reader.readLine();
-
             String[] data = line.split(" ");
             atm.setATMState(data[0]);
             atm.setBalance(new BigDecimal(data[1]));
@@ -30,7 +29,6 @@ public class DataFileManager implements ReadableWritable<ATM> {
     }
     @Override
     public void write(ATM atm) {
-        String line;
         List<String> lines = new ArrayList<>();
         lines.add(atm.getATMState() + " " + atm.getBalance() + " " + atm.getCardNumber());
         lines.addAll(atm.getAllCardsToString());
