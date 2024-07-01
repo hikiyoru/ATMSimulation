@@ -51,5 +51,7 @@ public abstract class BankEntity {
         return cardNumber.matches("\\d{4}-\\d{4}-\\d{4}-\\d{4}");
     }
 
-    public void updateBalance(BigDecimal amount) { balance = balance.add(amount); }
+    public void updateBalance(BigDecimal amount) {
+        balance = balance.add(amount);
+    }
 }

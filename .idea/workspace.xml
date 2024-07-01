@@ -4,24 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="data.txt updating on programme close instead of every update balances.">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/atm.txt" afterDir="false" />
+    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="Refactoring, added transaction class">
       <change afterPath="$PROJECT_DIR$/run.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Repository/BankEntityRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Services/Transaction.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Views/ConsoleView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/cards.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ATM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ATM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ATMState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ATMState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/BankEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/BankEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FileBankEntityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DateFormatHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/DateFormatHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/InsufficientFundsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/InsufficientFundsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/atm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/atm.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ReadableWritable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/ATM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ATM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/BankEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/BankEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Repository/BankEntityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/BankEntityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Transaction.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -137,7 +130,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719743571553</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Refactoring, added transaction class">
+      <option name="closed" value="true" />
+      <created>1719846307341</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1719846307341</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,6 +158,7 @@
     <MESSAGE value="Update classes, implementation ReadableWritable, added DateFormatHelper" />
     <MESSAGE value="Added InsufficientFundsException, refactor code" />
     <MESSAGE value="data.txt updating on programme close instead of every update balances." />
-    <option name="LAST_COMMIT_MESSAGE" value="data.txt updating on programme close instead of every update balances." />
+    <MESSAGE value="Refactoring, added transaction class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactoring, added transaction class" />
   </component>
 </project>

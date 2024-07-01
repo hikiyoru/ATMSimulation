@@ -30,9 +30,11 @@ public class ATM extends BankEntity {
     public void setATMState(String status) {
         this.state = ATMState.valueOf(status);
     }
+
     public void setCards(Map<String, Card> cards) {
         this.cards = cards;
     }
+
     public void addCard(Card card) {
         cards.put(card.getCardNumber(), card);
     }

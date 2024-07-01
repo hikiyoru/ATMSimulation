@@ -20,7 +20,9 @@ public class Card extends BankEntity {
         setBlockingCardUntil(blockingCardUntil);
     }
 
-    public String getPinCode() { return pinCode; }
+    public String getPinCode() {
+        return pinCode;
+    }
 
     public byte getPinCodeAttempt() {
         return pinCodeAttempt;
@@ -38,7 +40,7 @@ public class Card extends BankEntity {
         try {
             byte attempts = Byte.parseByte(pinCodeAttempt);
             if (attempts >= 0 && attempts <= MAX_PIN_ATTEMPTS) {
-                this.pinCodeAttempt = (byte) attempts;
+                this.pinCodeAttempt = attempts;
             } else {
                 throw new IllegalArgumentException("Pin attempts must be between 0 and " + MAX_PIN_ATTEMPTS);
             }
@@ -97,6 +99,7 @@ public class Card extends BankEntity {
     public void setBlockingUntil(Date blockingUntil) {
         this.blockingUntil = blockingUntil;
     }
+
     @Override
     public String toString() {
         return getCardNumber() + " " + getPinCode() + " " + getPinCodeAttempt() + " " + getBalance() + " " + getBlockingCardUntil();
