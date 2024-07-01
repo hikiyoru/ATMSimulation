@@ -4,7 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="Added InsufficientFundsException, refactor code" />
+    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="data.txt updating on programme close instead of every update balances.">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/atm.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/run.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/BankEntityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Services/Transaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Views/ConsoleView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/cards.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ATM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ATM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ATMState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ATMState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BankEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/BankEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFileManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/FileBankEntityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DateFormatHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/DateFormatHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/InsufficientFundsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utils/InsufficientFundsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ReadableWritable.java" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,19 +66,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;development&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/uglot/IdeaProjects/ATMSimulation/src/Main.java&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "development",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "C:/Users/uglot/IdeaProjects/ATMSimulation/src/Main.java"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -110,7 +129,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719740726357</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="data.txt updating on programme close instead of every update balances.">
+      <option name="closed" value="true" />
+      <created>1719743571553</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1719743571553</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -129,6 +156,7 @@
     <MESSAGE value="ReadableWritable interface (Card -&gt; Map&lt;String, Card&gt;)" />
     <MESSAGE value="Update classes, implementation ReadableWritable, added DateFormatHelper" />
     <MESSAGE value="Added InsufficientFundsException, refactor code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added InsufficientFundsException, refactor code" />
+    <MESSAGE value="data.txt updating on programme close instead of every update balances." />
+    <option name="LAST_COMMIT_MESSAGE" value="data.txt updating on programme close instead of every update balances." />
   </component>
 </project>

@@ -1,10 +1,8 @@
-import java.util.EnumSet;
-import java.util.HashMap;
-import java.util.Map;
+package Models;
 
 public enum ATMState {
     IDLE,
-    AWAITING_CARDPIN,
+    AWAITING_CARD_PIN,
     AWAITING_ACTION,
     WITHDRAWING,
     DEPOSITING,
