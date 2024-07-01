@@ -1,6 +1,6 @@
-package Models;
+package models;
 
-import Utils.DateFormatHelper;
+import utils.DateFormatHelper;
 
 import java.text.ParseException;
 import java.util.Calendar;
@@ -94,6 +94,7 @@ public class Card extends BankEntity {
         date = calendar.getTime();
         blockingUntil = date;
         pinCodeAttempt = 0;
+        System.err.println("The card is blocked due to too many attempts to enter the PIN code");
     }
 
     public void setBlockingUntil(Date blockingUntil) {

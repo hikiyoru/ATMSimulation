@@ -1,6 +1,6 @@
-import Models.ATM;
-import Repository.FileBankEntityRepository;
-import Views.ConsoleView;
+import models.ATM;
+import repository.FileBankEntityRepository;
+import views.ConsoleView;
 
 public class Main {
     public static void main(String[] args) {

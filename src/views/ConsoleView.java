@@ -1,11 +1,11 @@
-package Views;
+package views;
 
-import Models.ATM;
-import Models.ATMState;
-import Models.BankEntity;
-import Models.Card;
-import Repository.FileBankEntityRepository;
-import Services.Transaction;
+import models.ATM;
+import models.ATMState;
+import models.BankEntity;
+import models.Card;
+import repository.FileBankEntityRepository;
+import services.Transaction;
 
 import java.util.Scanner;
 

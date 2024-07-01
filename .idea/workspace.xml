@@ -4,12 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="Minor code style fixes">
-      <change afterPath="$PROJECT_DIR$/run.bat" afterDir="false" />
+    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="Added 'exiting' state and run.bat file.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/atm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/atm.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/ATMState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ATMState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Views/ConsoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ConsoleView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cards.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/cards.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Card.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719848691517</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Added 'exiting' state and run.bat file.">
+      <option name="closed" value="true" />
+      <created>1719849686032</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1719849686032</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,6 +178,7 @@
     <MESSAGE value="Refactoring, added transaction class" />
     <MESSAGE value="Added console menu" />
     <MESSAGE value="Minor code style fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor code style fixes" />
+    <MESSAGE value="Added 'exiting' state and run.bat file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added 'exiting' state and run.bat file." />
   </component>
 </project>

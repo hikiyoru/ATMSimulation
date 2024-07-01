@@ -1,7 +1,7 @@
-package Repository;
+package repository;
 
-import Models.ATM;
-import Models.Card;
+import models.ATM;
+import models.Card;
 
 import java.io.*;
 import java.util.*;
