@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="Refactoring, added transaction class">
+    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="Minor code style fixes">
       <change afterPath="$PROJECT_DIR$/run.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Views/ConsoleView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/atm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/atm.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/ATM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ATM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/BankEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/BankEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/BankEntityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/BankEntityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Services/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Models/ATMState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/ATMState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Views/ConsoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Views/ConsoleView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +133,23 @@
       <option name="project" value="LOCAL" />
       <updated>1719846307341</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added console menu">
+      <option name="closed" value="true" />
+      <created>1719848555264</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1719848555264</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Minor code style fixes">
+      <option name="closed" value="true" />
+      <created>1719848691517</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1719848691517</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -159,6 +170,8 @@
     <MESSAGE value="Added InsufficientFundsException, refactor code" />
     <MESSAGE value="data.txt updating on programme close instead of every update balances." />
     <MESSAGE value="Refactoring, added transaction class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring, added transaction class" />
+    <MESSAGE value="Added console menu" />
+    <MESSAGE value="Minor code style fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor code style fixes" />
   </component>
 </project>

@@ -10,11 +10,11 @@ import Services.Transaction;
 import java.util.Scanner;
 
 public class ConsoleView {
-    String input = "";
-    Scanner scanner = new Scanner(System.in);
-    FileBankEntityRepository repository;
-    ATM atm;
-    Card card;
+    private String input = "";
+    private final Scanner scanner = new Scanner(System.in);
+    private final FileBankEntityRepository repository;
+    private final ATM atm;
+    private Card card;
 
     public ConsoleView(ATM atm, FileBankEntityRepository repository) {
         this.repository = repository;
@@ -43,6 +43,9 @@ public class ConsoleView {
                 case CHECKING_BALANCE:
                     checkingBalance();
                     break;
+                case EXITING:
+                    exiting();
+                    return;
             }
             repository.update(atm);
         }
@@ -50,10 +53,11 @@ public class ConsoleView {
 
     private void idle() {
         while (true) {
-            System.out.println("ATM waiting for card number (XXXX-XXXX-XXXX-XXXX):");
+            System.out.println("ATM waiting for card number (XXXX-XXXX-XXXX-XXXX) or enter 'exit':");
             input = scanner.next();
             if (input.equals("exit")) {
-                return;
+                atm.setATMState(ATMState.EXITING);
+                break;
             }
             if (!atm.isStringCardNumber(input)) {
                 System.err.println("Invalid card number. Try again");
@@ -164,5 +168,10 @@ public class ConsoleView {
         System.out.println("Entered card: " + atm.getCardNumber() +
                            "\nAvailable balance: " + card.getBalance() + "\n");
         atm.setATMState(ATMState.AWAITING_CARD_PIN);
+    }
+
+    private void exiting() {
+        atm.setATMState(ATMState.IDLE);
+        repository.update(atm);
     }
 }
