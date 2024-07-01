@@ -47,6 +47,7 @@ public class ConsoleView {
             repository.update(atm);
         }
     }
+
     private void idle() {
         while (true) {
             System.out.println("ATM waiting for card number (XXXX-XXXX-XXXX-XXXX):");
@@ -67,6 +68,7 @@ public class ConsoleView {
             break;
         }
     }
+
     private void awaitingCardPin() {
         while (true) {
             System.out.println("Entered card: " + atm.getCardNumber() + "\nEnter your PIN code or enter 'back' to remove card:");
@@ -93,6 +95,7 @@ public class ConsoleView {
             }
         }
     }
+
     private void awaitingAction() {
         label:
         while (true) {
@@ -120,6 +123,7 @@ public class ConsoleView {
             System.err.println("Incorrect input. Try again");
         }
     }
+
     private void withdrawing() {
         while (true) {
             System.out.println("Entered card: " + atm.getCardNumber() + "\nEnter amount or enter 'back' to cancel operation:");
@@ -137,6 +141,7 @@ public class ConsoleView {
         }
         atm.setATMState(ATMState.AWAITING_CARD_PIN);
     }
+
     private void depositing() {
         while (true) {
             System.out.println("Entered card: " + atm.getCardNumber() + "\nEnter amount or enter 'back' to cancel operation:");
@@ -154,6 +159,7 @@ public class ConsoleView {
         }
         atm.setATMState(ATMState.AWAITING_CARD_PIN);
     }
+
     private void checkingBalance() {
         System.out.println("Entered card: " + atm.getCardNumber() +
                            "\nAvailable balance: " + card.getBalance() + "\n");

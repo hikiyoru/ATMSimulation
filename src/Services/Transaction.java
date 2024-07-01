@@ -57,6 +57,7 @@ public class Transaction<T extends BankEntity> {
             return false;
         }
     }
+
     public boolean transfer(String stringAmount) {
         try {
             BigDecimal amount = new BigDecimal(stringAmount);
@@ -74,6 +75,7 @@ public class Transaction<T extends BankEntity> {
             return false;
         }
     }
+
     public boolean isPositive(BigDecimal value) {
         return value.signum() > 0;
     }
