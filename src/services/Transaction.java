@@ -1,5 +1,6 @@
 package services;
 
+import exceptions.InsufficientFundsException;
 import models.BankEntity;
 
 import java.math.BigDecimal;
@@ -20,10 +21,10 @@ public class Transaction<T extends BankEntity> {
                 throw new IllegalArgumentException("The amount must be positive");
             }
             if (target.getBalance().compareTo(amount) < 0) {
-                throw new utils.InsufficientFundsException("Insufficient funds on bank card");
+                throw new InsufficientFundsException("Insufficient funds on bank card");
             }
             if (source.getBalance().compareTo(amount) < 0) {
-                throw new utils.InsufficientFundsException("Insufficient funds in ATM");
+                throw new InsufficientFundsException("Insufficient funds in ATM");
             }
             source.updateBalance(amount.negate());
             target.updateBalance(amount.negate());
@@ -44,7 +45,7 @@ public class Transaction<T extends BankEntity> {
                 throw new IllegalArgumentException("The amount must be positive");
             }
             if (amount.compareTo(new BigDecimal(1000000)) > 0) {
-                throw new utils.InsufficientFundsException("The amount cannot be more than 1000000");
+                throw new InsufficientFundsException("The amount cannot be more than 1000000");
             }
             source.updateBalance(amount);
             target.updateBalance(amount);
@@ -62,7 +63,7 @@ public class Transaction<T extends BankEntity> {
         try {
             BigDecimal amount = new BigDecimal(stringAmount);
             if (source.getBalance().compareTo(amount) < 0) {
-                throw new utils.InsufficientFundsException("Insufficient funds on bank card");
+                throw new InsufficientFundsException("Insufficient funds on bank card");
             }
             source.updateBalance(amount.negate());
             target.updateBalance(amount);

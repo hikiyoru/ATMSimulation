@@ -4,7 +4,7 @@ import models.ATM;
 import models.ATMState;
 import models.BankEntity;
 import models.Card;
-import repository.FileBankEntityRepository;
+import repositories.FileBankEntityRepository;
 import services.Transaction;
 
 import java.util.Scanner;

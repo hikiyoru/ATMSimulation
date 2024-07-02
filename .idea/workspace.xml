@@ -4,10 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="Added 'exiting' state and run.bat file.">
+    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="Packages naming fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cards.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/cards.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Models/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Models/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/BankEntityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/BankEntityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/FileBankEntityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/FileBankEntityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/DateFormatHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/DateFormatHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/InsufficientFundsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/InsufficientFundsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/ConsoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ConsoleView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +60,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Run",
+    "Application.Main.executor": "Debug",
     "Downloaded.Files.Path.Enabled": "false",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -155,7 +161,23 @@
       <option name="project" value="LOCAL" />
       <updated>1719849686032</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Packages naming fix">
+      <option name="closed" value="true" />
+      <created>1719858674436</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1719858674436</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Packages naming fix">
+      <option name="closed" value="true" />
+      <created>1719858724317</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1719858724317</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -179,6 +201,18 @@
     <MESSAGE value="Added console menu" />
     <MESSAGE value="Minor code style fixes" />
     <MESSAGE value="Added 'exiting' state and run.bat file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added 'exiting' state and run.bat file." />
+    <MESSAGE value="Packages naming fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Packages naming fix" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Main.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
