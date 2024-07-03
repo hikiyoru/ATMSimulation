@@ -1,7 +1,9 @@
 package repositories;
 
 import models.ATM;
+import models.ATMState;
 import models.Card;
+import utils.DateFormatHelper;
 
 import java.io.*;
 import java.util.*;
@@ -9,14 +11,62 @@ import java.util.*;
 public class FileBankEntityRepository implements BankEntityRepository<ATM, Map<String, Card>> {
     private final String fileAtmPath;
     private final String fileCardsPath;
+    private final Map<String, Card> cards;
+    private final ATM atm;
 
     public FileBankEntityRepository(String fileAtmPath, String fileCardsPath) {
         this.fileAtmPath = fileAtmPath;
         this.fileCardsPath = fileCardsPath;
+        this.cards = loadCards();
+        this.atm = loadATM();
+    }
+
+    private ATM loadATM() {
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileAtmPath))) {
+            String line = reader.readLine();
+            if (line != null) {
+                String[] data = line.split(" ");
+                if (data.length == 2) {
+                    return new ATM(data[0], ATMState.fromString(data[1]), null, null);
+                } else {
+                    return new ATM(data[0], ATMState.fromString(data[1]), cards.get(data[2]), Boolean.parseBoolean(data[3]));
+                }
+            } else {
+                throw new IOException("Empty file: " + fileAtmPath);
+            }
+        } catch (Exception e) {
+            System.err.println("Error reading file: " + e.getMessage());
+            return null;
+        }
+    }
+
+    private Map<String, Card> loadCards() {
+        Map<String, Card> cards = new HashMap<>();
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileCardsPath))) {
+            String line;
+            String[] data;
+            while ((line = reader.readLine()) != null) {
+                data = line.split(" ");
+                cards.put(data[0], new Card(data[0], data[1], Byte.parseByte(data[2]), data[3], DateFormatHelper.parseDate(data[4])));
+            }
+        } catch (Exception e) {
+            System.err.println("Error reading file: " + e.getMessage());
+        }
+        return cards;
     }
 
     @Override
-    public void saveATM(ATM atm) {
+    public ATM getATM() {
+        return atm;
+    }
+
+    @Override
+    public Map<String, Card> getCards() {
+        return cards;
+    }
+
+    @Override
+    public void saveATM() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileAtmPath))) {
            writer.write(atm.toString());
         } catch (IOException e) {
@@ -25,7 +75,7 @@ public class FileBankEntityRepository implements BankEntityRepository<ATM, Map<S
     }
 
     @Override
-    public void saveCards(Map<String, Card> cards) {
+    public void saveCards() {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileCardsPath))) {
             for (Card value : cards.values()) {
                 writer.write(value.toString() + "\n");
@@ -36,41 +86,8 @@ public class FileBankEntityRepository implements BankEntityRepository<ATM, Map<S
     }
 
     @Override
-    public ATM getATM() {
-        ATM atm = null;
-        try (BufferedReader reader = new BufferedReader(new FileReader(fileAtmPath))) {
-            String line = reader.readLine();
-            if (line != null) {
-                String[] data = line.split(" ");
-                atm = new ATM(data[0], data[1], data[2]);
-            } else {
-                throw new IOException("Empty file: " + fileAtmPath);
-            }
-        } catch (IOException e) {
-            System.err.println("Error reading file: " + e.getMessage());
-        }
-        return atm;
-    }
-
-    @Override
-    public Map<String, Card> getCards() {
-        Map<String, Card> cards = new HashMap<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader(fileCardsPath))) {
-            String line;
-            String[] data;
-            while ((line = reader.readLine()) != null) {
-                data = line.split(" ");
-                cards.put(data[0],new Card(data[0], data[1], (data[2]), data[3], data[4]));
-            }
-        } catch (IOException e) {
-            System.err.println("Error reading file: " + e.getMessage());
-        }
-        return cards;
-    }
-
-    @Override
-    public void update(ATM atm) {
-        saveATM(atm);
-        saveCards(atm.getCards());
+    public void saveAll() {
+        saveATM();
+        saveCards();
     }
 }

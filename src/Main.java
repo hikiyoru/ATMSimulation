@@ -1,13 +1,12 @@
-import models.ATM;
-import repository.FileBankEntityRepository;
+import controllers.ATMController;
+import repositories.FileBankEntityRepository;
 import views.ConsoleView;
 
 public class Main {
     public static void main(String[] args) {
-        FileBankEntityRepository repository = new FileBankEntityRepository();
-        ATM atm = repository.getATM();
-        atm.setCards(repository.getCards());
-        ConsoleView consoleView = new ConsoleView(atm, repository);
-        consoleView.run();
+        FileBankEntityRepository repository = new FileBankEntityRepository("data/atm.txt", "data/cards.txt");
+        ConsoleView consoleView = new ConsoleView();
+        ATMController controller = new ATMController(repository, consoleView);
+        controller.run();
     }
 }

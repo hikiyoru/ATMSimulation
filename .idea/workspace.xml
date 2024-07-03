@@ -4,15 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="Packages naming fix">
+    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="Package name repository -&gt; repositories, InsufficientFundsException now part of exceptions package, FileBankEntityRepository gets data file paths now through constructor.">
+      <change afterPath="$PROJECT_DIR$/src/controllers/ATMController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/exceptions/AuthorizationException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/StringHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/atm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/atm.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/cards.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/cards.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/BankEntityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/BankEntityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repository/FileBankEntityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/FileBankEntityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ATM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ATM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ATMState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ATMState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/BankEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/BankEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/BankEntityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/BankEntityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/FileBankEntityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/FileBankEntityRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/DateFormatHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/DateFormatHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/InsufficientFundsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exceptions/InsufficientFundsException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/ConsoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ConsoleView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +67,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Debug",
+    "Application.Main.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -177,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719858724317</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Package name repository -&gt; repositories, InsufficientFundsException now part of exceptions package, FileBankEntityRepository gets data file paths now through constructor.">
+      <option name="closed" value="true" />
+      <created>1719914249682</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1719914249682</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -202,17 +217,7 @@
     <MESSAGE value="Minor code style fixes" />
     <MESSAGE value="Added 'exiting' state and run.bat file." />
     <MESSAGE value="Packages naming fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Packages naming fix" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>16</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Package name repository -&gt; repositories, InsufficientFundsException now part of exceptions package, FileBankEntityRepository gets data file paths now through constructor." />
+    <option name="LAST_COMMIT_MESSAGE" value="Package name repository -&gt; repositories, InsufficientFundsException now part of exceptions package, FileBankEntityRepository gets data file paths now through constructor." />
   </component>
 </project>

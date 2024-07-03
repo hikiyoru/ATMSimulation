@@ -7,5 +7,13 @@ public enum ATMState {
     WITHDRAWING,
     DEPOSITING,
     CHECKING_BALANCE,
-    EXITING
+    EXITING;
+
+    public static ATMState fromString(String string) {
+        try {
+            return ATMState.valueOf(string);
+        } catch (IllegalArgumentException e) {
+            return ATMState.IDLE;
+        }
+    }
 }
