@@ -87,7 +87,7 @@ public class ATMController {
                 atm.setATMState(ATMState.IDLE);
                 break;
             }
-            consoleView.showCurrentCard(atm);
+            consoleView.showCurrentCard(atm.getCard().getCardNumber());
             consoleView.showInfoMessage("Enter your PIN code or enter 'back' to remove card:");
             input = scanner.next();
             if (input.equals("back")) {
@@ -109,7 +109,7 @@ public class ATMController {
                 atm.setATMState(ATMState.IDLE);
                 break;
             }
-            consoleView.showCurrentCard(atm);
+            consoleView.showCurrentCard(atm.getCard().getCardNumber());
             consoleView.showInfoMessage("Choose an action:\n" +
                                     "1. Withdraw\n" +
                                     "2. Deposit\n" +
@@ -182,7 +182,7 @@ public class ATMController {
         if (!atm.isAuthorized()) {
             atm.setATMState(ATMState.IDLE);
         }
-        consoleView.showBalance(atm);
+        consoleView.showBalance(atm.getBalance());
         atm.setATMState(ATMState.AWAITING_CARD_PIN);
     }
 

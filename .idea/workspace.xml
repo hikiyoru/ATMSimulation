@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="Added controller, AuthorizationException, StringHelper classes.">
-      <change beforePath="$PROJECT_DIR$/run.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="Paths from args">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1720016500427</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Paths from args">
+      <option name="closed" value="true" />
+      <created>1720016854181</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1720016854181</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -213,6 +220,7 @@
     <MESSAGE value="Packages naming fix" />
     <MESSAGE value="Package name repository -&gt; repositories, InsufficientFundsException now part of exceptions package, FileBankEntityRepository gets data file paths now through constructor." />
     <MESSAGE value="Added controller, AuthorizationException, StringHelper classes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added controller, AuthorizationException, StringHelper classes." />
+    <MESSAGE value="Paths from args" />
+    <option name="LAST_COMMIT_MESSAGE" value="Paths from args" />
   </component>
 </project>

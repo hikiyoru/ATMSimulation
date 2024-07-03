@@ -2,18 +2,20 @@ package views;
 
 import models.ATM;
 
+import java.math.BigDecimal;
+
 public class ConsoleView {
 
     public void showInfoMessage(String message) {
         System.out.println(message);
     }
 
-    public void showCurrentCard(ATM atm) {
-        System.out.println("Current card: " + atm.getCard().getCardNumber());
+    public void showCurrentCard(String currentCard) {
+        System.out.println("Current card: " + currentCard);
     }
 
-    public void showBalance(ATM atm) {
-        System.out.println("Current balance: " + atm.getCard().getBalance());
+    public void showBalance(BigDecimal balance) {
+        System.out.println("Current balance: " + balance);
     }
 
     public void showErrorMessage(String message) {
