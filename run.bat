@@ -1,1 +1,1 @@
-java -cp ".\out\production\ATMSimulation" Main
+java -cp ".\out\production\ATMSimulation" Main "data/atm.txt" "data/cards.txt"

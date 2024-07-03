@@ -4,23 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="Package name repository -&gt; repositories, InsufficientFundsException now part of exceptions package, FileBankEntityRepository gets data file paths now through constructor.">
-      <change afterPath="$PROJECT_DIR$/src/controllers/ATMController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/exceptions/AuthorizationException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/StringHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/atm.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/atm.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/cards.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/cards.txt" afterDir="false" />
+    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="Added controller, AuthorizationException, StringHelper classes.">
       <change beforePath="$PROJECT_DIR$/run.bat" beforeDir="false" afterPath="$PROJECT_DIR$/run.bat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/ATM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ATM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/ATMState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ATMState.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/BankEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/BankEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Card.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repositories/BankEntityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/BankEntityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repositories/FileBankEntityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/FileBankEntityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/DateFormatHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/DateFormatHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/ConsoleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/ConsoleView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719914249682</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added controller, AuthorizationException, StringHelper classes.">
+      <option name="closed" value="true" />
+      <created>1720016500427</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1720016500427</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -218,6 +212,7 @@
     <MESSAGE value="Added 'exiting' state and run.bat file." />
     <MESSAGE value="Packages naming fix" />
     <MESSAGE value="Package name repository -&gt; repositories, InsufficientFundsException now part of exceptions package, FileBankEntityRepository gets data file paths now through constructor." />
-    <option name="LAST_COMMIT_MESSAGE" value="Package name repository -&gt; repositories, InsufficientFundsException now part of exceptions package, FileBankEntityRepository gets data file paths now through constructor." />
+    <MESSAGE value="Added controller, AuthorizationException, StringHelper classes." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added controller, AuthorizationException, StringHelper classes." />
   </component>
 </project>
