@@ -1,0 +1,125 @@
+Index: src/ATM.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.math.BigDecimal;\r\nimport java.util.*;\r\n\r\npublic class ATM extends BankEntity {\r\n    private ATMState atmState = ATMState.IDLE;\r\n    private final Map<String, Card> cards = new HashMap<>();\r\n    private final DataFileManager dataFileManager;\r\n\r\n    ATM(DataFileManager dataFileManager)\r\n    {\r\n        this.dataFileManager = dataFileManager;\r\n        dataFileManager.read(this);\r\n    }\r\n    public ATMState getATMState() {\r\n        return atmState;\r\n    }\r\n    public Card getCard(String enteredCard) {\r\n        return cards.get(enteredCard);\r\n    }\r\n    public List<String> getAllCardsToString() {\r\n        List<String> list = new ArrayList<>();\r\n        for (Map.Entry<String, Card> entry : cards.entrySet()) {\r\n            String key = entry.getKey();\r\n            Card card = entry.getValue();\r\n            list.add(card.toString());\r\n\r\n        }\r\n        return list;\r\n    }\r\n    public void setATMState(String status) {\r\n        this.atmState = ATMState.valueOf(status);\r\n    }\r\n    public void addCard(Card card) {\r\n        cards.put(card.getCardNumber(), card);\r\n    }\r\n    public boolean withdraw(BigDecimal amount) {\r\n        try {\r\n            if (!isPositive(amount)) {\r\n                throw new IllegalArgumentException(\"The amount must be positive\");\r\n            }\r\n            BigDecimal cardBalance = getCard(cardNumber).balance;\r\n            if (cardBalance.compareTo(amount) < 0) {\r\n                throw new InsufficientFundsException(\"Insufficient funds on bank card\");\r\n            }\r\n            if (balance.compareTo(amount) < 0) {\r\n                throw new InsufficientFundsException(\"Insufficient funds in ATM\");\r\n            }\r\n            updateBalance(amount.negate());\r\n            return true;\r\n        } catch (Exception e) {\r\n            System.err.println(\"Error: \" + e.getMessage());\r\n            return false;\r\n        }\r\n    }\r\n    public boolean deposit(BigDecimal amount) {\r\n        try {\r\n            if (!isPositive(amount)) {\r\n                throw new IllegalArgumentException(\"The amount must be positive\");\r\n            }\r\n            if (amount.compareTo(new BigDecimal(1000000)) > 0) {\r\n                throw new InsufficientFundsException(\"The amount cannot be more than 1000000\");\r\n            }\r\n            updateBalance(amount);\r\n            return true;\r\n        } catch (Exception e) {\r\n            System.err.println(\"Error: \" + e.getMessage());\r\n            return false;\r\n        }\r\n    }\r\n    @Override\r\n    public void updateBalance(BigDecimal amount) {\r\n        balance = balance.add(amount);\r\n        getCard(cardNumber).updateBalance(amount);\r\n        dataFileManager.write(this);\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/ATM.java b/src/ATM.java
+--- a/src/ATM.java	(revision 60f7cf72f429a6556c6d0dbb4dcd556812667d53)
++++ b/src/ATM.java	(date 1719742995846)
+@@ -10,6 +10,7 @@
+     {
+         this.dataFileManager = dataFileManager;
+         dataFileManager.read(this);
++        Runtime.getRuntime().addShutdownHook(new Thread(() -> dataFileManager.write(this)));
+     }
+     public ATMState getATMState() {
+         return atmState;
+@@ -20,7 +21,6 @@
+     public List<String> getAllCardsToString() {
+         List<String> list = new ArrayList<>();
+         for (Map.Entry<String, Card> entry : cards.entrySet()) {
+-            String key = entry.getKey();
+             Card card = entry.getValue();
+             list.add(card.toString());
+ 
+@@ -71,6 +71,5 @@
+     public void updateBalance(BigDecimal amount) {
+         balance = balance.add(amount);
+         getCard(cardNumber).updateBalance(amount);
+-        dataFileManager.write(this);
+     }
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"fd3e3c13-e7e0-42d8-b608-2423624582cc\" name=\"Changes\" comment=\"Added InsufficientFundsException, refactor code\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/data/data.txt\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/data/data.txt\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/ATM.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/ATM.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/ATMState.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/ATMState.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/Main.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/Main.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"Interface\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_BRANCH_BY_REPOSITORY\">\r\n      <map>\r\n        <entry key=\"$PROJECT_DIR$\" value=\"master\" />\r\n      </map>\r\n    </option>\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;hikiyoru&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/hikiyoru/ATMSimulation.git&quot;,\r\n    &quot;accountId&quot;: &quot;b81b5398-ceb7-44ab-8cdb-6b7d33f2e9ba&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 8\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2iVm5li5l6B1cVAsLWS8pkpCP4Q\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.Main.executor&quot;: &quot;Run&quot;,\r\n    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,\r\n    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;development&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/uglot/IdeaProjects/ATMSimulation/src/Main.java&quot;\r\n  }\r\n}</component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"fd3e3c13-e7e0-42d8-b608-2423624582cc\" name=\"Changes\" comment=\"\" />\r\n      <created>1719583937956</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1719583937956</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Added ATM, ATMState, Card classes, ReadableWritable interface.\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1719596281055</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1719596281055</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Added ATM, ATMState, Card classes, ReadableWritable interface.\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1719596389104</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1719596389104</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"ReadableWritable interface (Card -&gt; Map&lt;String, Card&gt;)\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1719597465785</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1719597465785</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Update classes, implementation ReadableWritable, added DateFormatHelper\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1719672696793</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1719672696793</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Added InsufficientFundsException, refactor code\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1719740726357</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1719740726357</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"6\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Added ATM, ATMState, Card classes, ReadableWritable interface.\" />\r\n    <MESSAGE value=\"ReadableWritable interface (Card -&gt; Map&lt;String, Card&gt;)\" />\r\n    <MESSAGE value=\"Update classes, implementation ReadableWritable, added DateFormatHelper\" />\r\n    <MESSAGE value=\"Added InsufficientFundsException, refactor code\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Added InsufficientFundsException, refactor code\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 60f7cf72f429a6556c6d0dbb4dcd556812667d53)
++++ b/.idea/workspace.xml	(date 1719743097945)
+@@ -4,11 +4,9 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="Added InsufficientFundsException, refactor code">
++    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="data.txt updating on programme close instead of every update balances.">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/data/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/data.txt" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/ATM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ATM.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/ATMState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ATMState.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+@@ -116,7 +114,23 @@
+       <option name="project" value="LOCAL" />
+       <updated>1719740726357</updated>
+     </task>
+-    <option name="localTasksCounter" value="6" />
++    <task id="LOCAL-00006" summary="Changed available ATM states">
++      <option name="closed" value="true" />
++      <created>1719741808348</created>
++      <option name="number" value="00006" />
++      <option name="presentableId" value="LOCAL-00006" />
++      <option name="project" value="LOCAL" />
++      <updated>1719741808348</updated>
++    </task>
++    <task id="LOCAL-00007" summary="data.txt updating on programme close instead of every update balances.">
++      <option name="closed" value="true" />
++      <created>1719742724476</created>
++      <option name="number" value="00007" />
++      <option name="presentableId" value="LOCAL-00007" />
++      <option name="project" value="LOCAL" />
++      <updated>1719742724476</updated>
++    </task>
++    <option name="localTasksCounter" value="8" />
+     <servers />
+   </component>
+   <component name="VcsManagerConfiguration">
+@@ -124,6 +138,8 @@
+     <MESSAGE value="ReadableWritable interface (Card -&gt; Map&lt;String, Card&gt;)" />
+     <MESSAGE value="Update classes, implementation ReadableWritable, added DateFormatHelper" />
+     <MESSAGE value="Added InsufficientFundsException, refactor code" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Added InsufficientFundsException, refactor code" />
++    <MESSAGE value="Changed available ATM states" />
++    <MESSAGE value="data.txt updating on programme close instead of every update balances." />
++    <option name="LAST_COMMIT_MESSAGE" value="data.txt updating on programme close instead of every update balances." />
+   </component>
+ </project>
+\ No newline at end of file
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>//TIP To <b>Run</b> code, press <shortcut actionId=\"Run\"/> or\r\n// click the <icon src=\"AllIcons.Actions.Execute\"/> icon in the gutter.\r\npublic class Main {\r\n    public static void main(String[] args) {\r\n        //TIP Press <shortcut actionId=\"ShowIntentionActions\"/> with your caret at the highlighted text\r\n        // to see how IntelliJ IDEA suggests fixing it.\r\n        System.out.printf(\"Hello and welcome!\");\r\n\r\n        for (int i = 1; i <= 5; i++) {\r\n            //TIP Press <shortcut actionId=\"Debug\"/> to start debugging your code. We have set one <icon src=\"AllIcons.Debugger.Db_set_breakpoint\"/> breakpoint\r\n            // for you, but you can always add more by pressing <shortcut actionId=\"ToggleLineBreakpoint\"/>.\r\n            System.out.println(\"i = \" + i);\r\n        }\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+--- a/src/Main.java	(revision 60f7cf72f429a6556c6d0dbb4dcd556812667d53)
++++ b/src/Main.java	(date 1719742995843)
+@@ -1,15 +1,11 @@
+-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
++import java.math.BigDecimal;
++
+ public class Main {
+     public static void main(String[] args) {
+-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
+-        // to see how IntelliJ IDEA suggests fixing it.
+-        System.out.printf("Hello and welcome!");
++        ATM atm = new ATM(new DataFileManager());
+ 
+-        for (int i = 1; i <= 5; i++) {
+-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
+-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
+-            System.out.println("i = " + i);
+-        }
++        atm.withdraw(new BigDecimal(2000));
++        atm.deposit(new BigDecimal(1000));
++
+     }
+ }
+\ No newline at end of file

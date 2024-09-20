@@ -1,18 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="" />
+    <list default="true" id="fd3e3c13-e7e0-42d8-b608-2423624582cc" name="Changes" comment="Paths from args">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;hikiyoru&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/hikiyoru/ATMSimulation.git&quot;,
+    &quot;accountId&quot;: &quot;b81b5398-ceb7-44ab-8cdb-6b7d33f2e9ba&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2iVm5li5l6B1cVAsLWS8pkpCP4Q" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -21,8 +52,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "development",
     "kotlin-language-version-configured": "true",
     "onboarding.tips.debug.path": "C:/Users/uglot/IdeaProjects/ATMSimulation/src/Main.java"
   }
@@ -36,17 +73,154 @@
       <option name="presentableId" value="Default" />
       <updated>1719583937956</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added ATM, ATMState, Card classes, ReadableWritable interface.">
+      <option name="closed" value="true" />
+      <created>1719596281055</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1719596281055</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added ATM, ATMState, Card classes, ReadableWritable interface.">
+      <option name="closed" value="true" />
+      <created>1719596389104</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1719596389104</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ReadableWritable interface (Card -&gt; Map&lt;String, Card&gt;)">
+      <option name="closed" value="true" />
+      <created>1719597465785</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1719597465785</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update classes, implementation ReadableWritable, added DateFormatHelper">
+      <option name="closed" value="true" />
+      <created>1719672696793</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1719672696793</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added InsufficientFundsException, refactor code">
+      <option name="closed" value="true" />
+      <created>1719740726357</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1719740726357</updated>
+    </task>
+    <task id="LOCAL-00006" summary="data.txt updating on programme close instead of every update balances.">
+      <option name="closed" value="true" />
+      <created>1719743571553</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1719743571553</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Refactoring, added transaction class">
+      <option name="closed" value="true" />
+      <created>1719846307341</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1719846307341</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Added console menu">
+      <option name="closed" value="true" />
+      <created>1719848555264</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1719848555264</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Minor code style fixes">
+      <option name="closed" value="true" />
+      <created>1719848691517</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1719848691517</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added 'exiting' state and run.bat file.">
+      <option name="closed" value="true" />
+      <created>1719849686032</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1719849686032</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Packages naming fix">
+      <option name="closed" value="true" />
+      <created>1719858674436</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1719858674436</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Packages naming fix">
+      <option name="closed" value="true" />
+      <created>1719858724317</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1719858724317</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Package name repository -&gt; repositories, InsufficientFundsException now part of exceptions package, FileBankEntityRepository gets data file paths now through constructor.">
+      <option name="closed" value="true" />
+      <created>1719914249682</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1719914249682</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Added controller, AuthorizationException, StringHelper classes.">
+      <option name="closed" value="true" />
+      <created>1720016500427</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1720016500427</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Paths from args">
+      <option name="closed" value="true" />
+      <created>1720016854181</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1720016854181</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>11</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added ATM, ATMState, Card classes, ReadableWritable interface." />
+    <MESSAGE value="ReadableWritable interface (Card -&gt; Map&lt;String, Card&gt;)" />
+    <MESSAGE value="Update classes, implementation ReadableWritable, added DateFormatHelper" />
+    <MESSAGE value="Added InsufficientFundsException, refactor code" />
+    <MESSAGE value="data.txt updating on programme close instead of every update balances." />
+    <MESSAGE value="Refactoring, added transaction class" />
+    <MESSAGE value="Added console menu" />
+    <MESSAGE value="Minor code style fixes" />
+    <MESSAGE value="Added 'exiting' state and run.bat file." />
+    <MESSAGE value="Packages naming fix" />
+    <MESSAGE value="Package name repository -&gt; repositories, InsufficientFundsException now part of exceptions package, FileBankEntityRepository gets data file paths now through constructor." />
+    <MESSAGE value="Added controller, AuthorizationException, StringHelper classes." />
+    <MESSAGE value="Paths from args" />
+    <option name="LAST_COMMIT_MESSAGE" value="Paths from args" />
   </component>
 </project>

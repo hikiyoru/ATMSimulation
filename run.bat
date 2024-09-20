@@ -1,0 +1,1 @@
+java -cp ".\out\production\ATMSimulation" Main "data/atm.txt" "data/cards.txt"
